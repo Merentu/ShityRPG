@@ -20,8 +20,8 @@ class RPG{
         while(!DidILuse){
             input = in.next();
             switch (input) {
-                case "sasat":
-                    heroList.get(0).hp -= 1;
+                case "heal":
+                    heroList.get(0).Heal();
                     break;
                 case "move":
                     dice = rnd.nextInt(20);
@@ -157,6 +157,7 @@ class Fighting{
             }
             for(int i = 0 ; i < enemieList.size(); i++){
                 heroList.get(0).hp -= enemieList.get(i).Hit();
+                System.out.println("Тебе дали по бошке на " + enemieList.get(i).Hit() + " урона, у тебя осталось " + heroList.get(0).hp + " жизней");
             }
             if(RPG.CheckAliveHeroes()){
                 System.out.println("Пизда, ты здох");
